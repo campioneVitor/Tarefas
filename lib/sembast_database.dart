@@ -15,4 +15,6 @@ db = await dbFactory.openDatabase(dbPath);
 }
 return db;
 }
+
+  getInstance() {}
 }

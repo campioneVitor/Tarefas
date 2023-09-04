@@ -1,10 +1,10 @@
 import 'package:sembast/sembast.dart';
 import 'package:tarefas/sembast_database.dart';
-import 'package:tarefas/tarefa_model.dart';
 
+import 'tarefa_model.dart';
 import 'tarefas_helper.dart';
 
-class TarefasHelperImpl  extends TarefasHelper{
+class TarefasHelperImpl extends TarefasHelper {
   @override
   excluir() {
     // TODO: implement excluir
@@ -25,11 +25,10 @@ class TarefasHelperImpl  extends TarefasHelper{
 
   @override
   salvar(Tarefa tarefa) async {
-      var store = StoreRef.main();
+      var store = intMapStoreFactory.store('tarefas');
       var db = SembastDatabase().getInstance();
-      await store.record('tarefa').put(db,tarefa.getMap());
+      await store.add(db,tarefa.getMap());
   }
 
-  
 
 }
