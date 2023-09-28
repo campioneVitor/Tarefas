@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tarefas/tarefa_page.dart';
 import 'package:tarefas/tarefa_state.dart';
 import 'package:tarefas/tarefas_helper.dart';
 import 'package:tarefas/tarefas_helper_impl.dart';
 import 'package:tarefas/tarefas_novo.dart';
-import 'package:tarefas/tarefas_page.dart';
+
 
 class App extends StatelessWidget {
   const App({super.key});
