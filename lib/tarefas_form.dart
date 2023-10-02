@@ -18,8 +18,14 @@ class _TarefasFormState extends State<TarefasForm> {
   final _dateController = TextEditingController(); // controla o estado do campo da data
 
   final _formKey = GlobalKey<FormState>(); // 1- Controla o estado do formulário
-  final _tarefa = Tarefa(descricao: "", prazo: DateTime.now()); // 6-Objeto que irá receber os dados da nova tarefa
+  late Tarefa _tarefa;
+  @override
+  void initState() {
+    super.initState();
+    _tarefa = widget.state.tarefa ?? Tarefa(descricao: "", prazo: DateTime.now()); 
+  }  
   
+     
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +38,7 @@ class _TarefasFormState extends State<TarefasForm> {
         child: Column(
           children: [
             TextFormField(
+              initialValue: _tarefa.descricao,
               decoration: const InputDecoration(
                   label: Text("Descrição"), border: OutlineInputBorder()),
               validator: (value) => (value??"").isEmpty?"Uma descrição para a tarefa deve ser informada.":null,  // 4- Validador do campo descrição
