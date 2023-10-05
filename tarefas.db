@@ -1,3 +1,4 @@
 {"version":1,"sembast":1}
 {"key":1,"store":"tarefas","value":{"descricao":"Tarefa Teste","prazo":"29/09/2023 12:00:00"}}
 {"key":2,"store":"tarefas","value":{"descricao":"Tarefa 2","prazo":"30/09/2023 12:00:00"}}
+{"key":3,"store":"tarefas","value":{"descricao":"tarefa nova","prazo":"19/10/2023 12:00:00"}}

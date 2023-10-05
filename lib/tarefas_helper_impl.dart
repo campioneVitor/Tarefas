@@ -9,8 +9,7 @@ class TarefasHelperImpl extends TarefasHelper {
   Future<void> excluir(int id) async {
     var store = intMapStoreFactory.store('tarefas');
     var db = (await SembastDatabase().getInstance());
-    var record =
-        await store.delete(db, finder: Finder(filter: Filter.byKey(id)));
+    await store.delete(db, finder: Finder(filter: Filter.byKey(id)));
   }
 
   @override
@@ -36,6 +35,10 @@ class TarefasHelperImpl extends TarefasHelper {
   Future<int> salvar(Tarefa tarefa) async {
     var store = intMapStoreFactory.store('tarefas');
     var db = (await SembastDatabase().getInstance());
-    return await store.add(db, tarefa.getMap());
+    if (tarefa.id!=null) {
+       return await store.update(db, tarefa.getMap());
+    } else {
+       return await store.add(db, tarefa.getMap());
+    }
   }
 }

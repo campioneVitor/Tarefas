@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -19,13 +20,20 @@ class _TarefasFormState extends State<TarefasForm> {
 
   final _formKey = GlobalKey<FormState>(); // 1- Controla o estado do formulário
   late Tarefa _tarefa;
+  late DateFormat dateFormat; // declarando o atributo dateFormat
   @override
   void initState() {
     super.initState();
     _tarefa = widget.state.tarefa ?? Tarefa(descricao: "", prazo: DateTime.now()); 
-  }  
+    // inicializando o objeto dateFormat, responsável por formatar datas
+    dateFormat = DateFormat("dd/MM/yyyy"); 
+    if (_tarefa.prazo!=null) {
+      atualizaPrazo(_tarefa.prazo);
+    }
+  }
   
-     
+   
+  
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +64,8 @@ class _TarefasFormState extends State<TarefasForm> {
                lastDate: DateTime.now().add(const Duration(days: 365)),);
                 print(data);
                 if (data!=null) {
-                  String dataFormatada = DateFormat("dd/MM/yyyy").format(data);
-                  _dateController.text = dataFormatada;
+                  atualizaPrazo(data);
+                  
                 }
               } ,
 
@@ -67,7 +75,7 @@ class _TarefasFormState extends State<TarefasForm> {
               validator: (value){
                 /**5 - validando o campo do prazo */
                   try {
-                    DateTime data = DateFormat("dd/MM/yyyy").parse(value!);
+                    DateTime data = dateFormat.parse(value!);
                     if (data.isBefore(DateTime.now()))                  {
                        return "Data não pode ser no passado!";  
                     }
@@ -75,7 +83,7 @@ class _TarefasFormState extends State<TarefasForm> {
                     return "Data inválida";
                   }
               },                                
-              onSaved: (value) => _tarefa.prazo = DateFormat("dd/MM/yyyy").parse(value!), // 8 - armazenando a data no campo prazo da tarefa 
+              onSaved: (value) => _tarefa.prazo = dateFormat.parse(value!), // 8 - armazenando a data no campo prazo da tarefa 
             ),
             const SizedBox(height: 10,),
             ElevatedButton(onPressed: () async {
@@ -86,7 +94,8 @@ class _TarefasFormState extends State<TarefasForm> {
                 _formKey.currentState!.save(); // 4-Solicita ao formulário que salve os dados
                 print("Tarefa digitada: $_tarefa");  // 9- Aqui iremos enviar para o banco de dados
 
-                await widget.helper.salvar(_tarefa);               
+                await widget.helper.salvar(_tarefa);  
+                Navigator.of(context).pop();             
 
               }
             }, child: const Text("Salvar"))
@@ -94,5 +103,10 @@ class _TarefasFormState extends State<TarefasForm> {
         ),
       ),
     );
+  }
+  
+  void atualizaPrazo(data) {
+    String dataFormatada = dateFormat.format(data);
+    _dateController.text = dataFormatada;
   }
 }
