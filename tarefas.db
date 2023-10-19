@@ -4,3 +4,5 @@
 {"key":3,"store":"tarefas","value":{"descricao":"tarefa nova","prazo":"19/10/2023 12:00:00"}}
 {"key":4,"store":"tarefas","value":{"descricao":"tarefa 1","prazo":"26/10/2023 12:00:00"}}
 {"key":5,"store":"tarefas","value":{"descricao":"tarefa 10","prazo":"28/10/2023 12:00:00"}}
+{"key":6,"store":"tarefas","value":{"descricao":"tarefa ","prazo":"26/10/2023 12:00:00"}}
+{"key":7,"store":"tarefas","value":{"descricao":"nova tarefa","prazo":"15/11/2023 12:00:00"}}
