@@ -1,8 +1,10 @@
 {"version":1,"sembast":1}
 {"key":1,"store":"tarefas","value":{"descricao":"Tarefa Teste","prazo":"29/09/2023 12:00:00"}}
-{"key":2,"store":"tarefas","value":{"descricao":"Tarefa 2","prazo":"30/09/2023 12:00:00"}}
-{"key":3,"store":"tarefas","value":{"descricao":"tarefa nova","prazo":"19/10/2023 12:00:00"}}
+{"key":2,"store":"tarefas","value":{"descricao":"Tarefa Teste  2","prazo":"31/10/2023 12:00:00","id":"2"}}
 {"key":4,"store":"tarefas","value":{"descricao":"tarefa 1","prazo":"26/10/2023 12:00:00"}}
 {"key":5,"store":"tarefas","value":{"descricao":"tarefa 10","prazo":"28/10/2023 12:00:00"}}
 {"key":6,"store":"tarefas","value":{"descricao":"tarefa ","prazo":"26/10/2023 12:00:00"}}
-{"key":7,"store":"tarefas","value":{"descricao":"nova tarefa","prazo":"15/11/2023 12:00:00"}}
+{"key":8,"store":"tarefas","value":{"descricao":"tarefa nova 2.0","prazo":"24/11/2023 12:00:00"}}
+{"key":4,"store":"tarefas","value":{"descricao":"tarefa Edit","prazo":"30/10/2023 12:00:00","id":"4"}}
+{"key":5,"store":"tarefas","value":{"descricao":"tarefa Teste 3","prazo":"31/10/2023 12:00:00","id":"5"}}
+{"key":6,"store":"tarefas","value":{"descricao":"tarefa Nova 1.0","prazo":"27/10/2023 12:00:00","id":"6"}}

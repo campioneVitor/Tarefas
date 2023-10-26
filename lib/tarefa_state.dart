@@ -25,4 +25,8 @@ class TarefaState {
     await helper.salvar(tarefa);
   }
 
+  delete() async {
+    await helper.delete(tarefa!);
+  }
+
 }

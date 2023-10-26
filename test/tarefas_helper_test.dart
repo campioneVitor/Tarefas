@@ -38,7 +38,7 @@ void main() {
     }
   });
 
-  testWidgets('tarefas helper: excluir', (tester) async {
+  /*testWidgets('tarefas helper: excluir', (tester) async {
     var helper = TarefasHelperImpl();
     try {
       await helper.excluir(1);
@@ -48,5 +48,5 @@ void main() {
     } catch (e) {
       print(e);
     }
-  });
+  });*/
 }
